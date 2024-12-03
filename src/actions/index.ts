@@ -1,5 +1,9 @@
 import { defineAction } from 'astro:actions';
 import { z } from 'astro:schema';
+import { neon } from "@neondatabase/serverless"
+import { DATABASE_URL } from "astro:env/server"
+
+const sql = neon(DATABASE_URL);
 
 export const server = {
   formulario: defineAction({
@@ -11,7 +15,8 @@ export const server = {
       comentarios_y_saludos: z.string().optional(),
     }),
     handler: async (input) => {
-      console.log(input);
+      const { nombre_y_apellido, email, menu, comentarios_y_saludos } = input;
+      await sql`INSERT INTO invitados (nombre_y_apellido, email, menu, comentarios_y_saludos) VALUES (${nombre_y_apellido}, ${email}, ${menu}, ${comentarios_y_saludos})`;
     },
   })
 }

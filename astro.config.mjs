@@ -1,6 +1,6 @@
 // @ts-check
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 
 import tailwind from '@astrojs/tailwind';
 
@@ -10,5 +10,10 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   integrations: [tailwind()],
   output: 'server',
-  adapter: vercel()
+  adapter: vercel(),
+  env: {
+    schema: {
+      DATABASE_URL: envField.string({ context: "server", access: "public" }),
+    }
+  }
 });
