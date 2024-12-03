@@ -1,11 +1,394 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { actions, isInputError } from "astro:actions";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const result = Astro.getActionResult(actions.formulario);
+const inputErrors = isInputError(result?.error) ? result.error.fields : {};
 ---
 
 <Layout>
-	<Welcome />
+  <main transition:persist>
+    <section
+      class="w-full min-h-screen flex flex-col justify-around items-center gap-80 relative"
+    >
+      <img
+        class="object-cover w-full h-full absolute -z-10 inset-0 aspect-video"
+        src="Imagen-fondo.webp"
+        alt="imagen belu & rodri2"
+      />
+      <h1
+        class="text-[#91ae5e] text-center font-bold font-dancing text-6xl italic"
+      >
+        Belu & Rodri
+      </h1>
+      <div
+        class="flex flex-col items-center justify-center gap-2 text-[#464861] font-noto text-xl px-10 py-4 rounded-lg font-bold backdrop-blur-sm bg-[#c4e9ff]/30"
+      >
+        <p class="text-2xl">Nos casamos en</p>
+        <div class="flex gap-4 items-center justify-evenly">
+          <div class="flex flex-col w-10 h-10 items-center">
+            <span class="text-2xl" id="dias">00</span><span class="text-xs"
+              >dias</span
+            >
+          </div> :
+          <div class="flex flex-col w-10 h-10 items-center">
+            <span class="text-2xl" id="horas">00</span><span class="text-xs"
+              >horas</span
+            >
+          </div> :
+          <div class="flex flex-col w-10 h-10 items-center">
+            <span class="text-2xl" id="minutos">00</span><span class="text-xs"
+              >minutos</span
+            >
+          </div> :
+          <div class="flex flex-col w-10 h-10 items-center">
+            <span class="text-2xl" id="segundos">00</span><span class="text-xs"
+              >segundos</span
+            >
+          </div>
+        </div>
+        <a
+          class="uppercase bg-white text-[#91ae5e] px-6 py-3 rounded-xl font-bold font-noto mt-6"
+          href="#info">Más Info</a
+        >
+      </div>
+    </section>
+    <section
+      id="info"
+      class="min-h-screen flex flex-col py-10 items-center font-noto"
+    >
+      <div
+        class="text-white bg-black flex justify-center items-center p-6 rounded-full"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100"
+          height="100"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-party-popper"
+          ><path d="M5.8 11.3 2 22l10.7-3.79"></path><path d="M4 3h.01"
+          ></path><path d="M22 8h.01"></path><path d="M15 2h.01"></path><path
+            d="M22 20h.01"></path><path
+            d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"
+          ></path><path
+            d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"
+          ></path><path
+            d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"
+          ></path><path
+            d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"
+          ></path></svg
+        >
+      </div>
+      <p class="text-4xl my-10">La Fiesta</p>
+      <img
+        class="aspect-[800x533] w-[500px] rounded-lg"
+        src="janos.jpg"
+        alt="janos olivos"
+        loading="lazy"
+      />
+      <div class="mt-10 flex flex-col gap-6 max-w-[350px] text-center">
+        <p><span class="font-black">Fecha</span>: Domingo 2 de Marzo</p>
+        <p><span class="font-black">Hora</span>: 19:00 hs</p>
+        <p>
+          <span class="font-black">Salón</span>: Janos Olivos I, Mariano Pelliza
+          310, Olivos, Provincia de Buenos Aires.
+        </p>
+        <div class="flex flex-col gap-2 items-center">
+          <p class="text-center mt-10 text-xl">DRESS CODE</p>
+          <p class="text-center">Elegante</p>
+          <div>
+            <svg
+              class="w-20 h-20"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="280"
+              zoomAndPan="magnify"
+              viewBox="0 0 210 209.999996"
+              height="280"
+              preserveAspectRatio="xMidYMid meet"
+              version="1.0"
+              ><defs
+                ><clipPath id="1c23e2cd08"
+                  ><path
+                    d="M 12.335938 0 L 197 0 L 197 210 L 12.335938 210 Z M 12.335938 0 "
+                    clip-rule="nonzero"></path></clipPath
+                ></defs
+              ><path
+                fill="#100f0d"
+                d="M 150.363281 72.042969 L 128.644531 72.042969 C 127.277344 72.042969 126.164062 70.933594 126.164062 69.5625 C 126.164062 68.191406 127.277344 67.078125 128.644531 67.078125 L 150.363281 67.078125 C 151.734375 67.078125 152.84375 68.191406 152.84375 69.5625 C 152.84375 70.933594 151.734375 72.042969 150.363281 72.042969 "
+                fill-opacity="1"
+                fill-rule="nonzero"></path><path
+                fill="#100f0d"
+                d="M 144.761719 159.71875 C 142.105469 159.71875 139.445312 159.085938 137.277344 157.816406 L 128.296875 152.589844 C 127.121094 151.898438 126.71875 150.371094 127.40625 149.1875 C 128.097656 148.003906 129.617188 147.605469 130.796875 148.296875 L 139.773438 153.53125 C 142.527344 155.128906 146.996094 155.128906 149.75 153.53125 L 158.726562 148.296875 C 159.910156 147.605469 161.425781 148.003906 162.117188 149.195312 C 162.808594 150.378906 162.410156 151.898438 161.21875 152.589844 L 152.25 157.816406 C 150.078125 159.085938 147.425781 159.71875 144.761719 159.71875 "
+                fill-opacity="1"
+                fill-rule="nonzero"></path><path
+                fill="#100f0d"
+                d="M 112.738281 113.144531 C 112.738281 115.011719 111.226562 116.523438 109.363281 116.523438 C 107.503906 116.523438 105.992188 115.011719 105.992188 113.144531 C 105.992188 111.28125 107.503906 109.777344 109.363281 109.777344 C 111.226562 109.777344 112.738281 111.28125 112.738281 113.144531 "
+                fill-opacity="1"
+                fill-rule="nonzero"></path><path
+                fill="#100f0d"
+                d="M 112.738281 151.429688 C 112.738281 153.292969 111.226562 154.804688 109.363281 154.804688 C 107.503906 154.804688 105.992188 153.292969 105.992188 151.429688 C 105.992188 149.570312 107.503906 148.058594 109.363281 148.058594 C 111.226562 148.058594 112.738281 149.570312 112.738281 151.429688 "
+                fill-opacity="1"
+                fill-rule="nonzero"></path><path
+                fill="#100f0d"
+                d="M 65.09375 159.71875 C 62.4375 159.71875 59.777344 159.085938 57.613281 157.816406 L 48.636719 152.589844 C 47.453125 151.898438 47.054688 150.371094 47.746094 149.1875 C 48.429688 148.003906 49.949219 147.605469 51.136719 148.296875 L 60.105469 153.53125 C 62.859375 155.128906 67.332031 155.128906 70.082031 153.53125 L 79.058594 148.296875 C 80.242188 147.605469 81.765625 148.003906 82.449219 149.195312 C 83.140625 150.378906 82.742188 151.898438 81.558594 152.589844 L 72.582031 157.816406 C 70.414062 159.085938 67.757812 159.71875 65.09375 159.71875 "
+                fill-opacity="1"
+                fill-rule="nonzero"></path><g clip-path="url(#1c23e2cd08)"
+                ><path
+                  fill="#100f0d"
+                  d="M 191.769531 195.632812 C 191.679688 195.730469 191.480469 195.90625 191.15625 195.90625 L 170.617188 195.90625 L 158.546875 128.546875 C 158.253906 126.953125 158.246094 125.324219 158.519531 123.710938 L 173.082031 37.9375 C 173.308594 36.585938 172.398438 35.308594 171.046875 35.074219 C 169.710938 34.847656 168.417969 35.753906 168.1875 37.105469 L 153.628906 122.886719 C 153.257812 125.058594 153.265625 127.261719 153.652344 129.425781 L 166.113281 198.886719 C 166.113281 198.886719 166.113281 198.890625 166.113281 198.890625 L 167.027344 204.011719 C 167.085938 204.339844 166.9375 204.582031 166.847656 204.691406 C 166.75 204.800781 166.550781 204.980469 166.214844 204.980469 L 135.773438 204.980469 C 121.582031 204.980469 104.632812 194.132812 104.050781 180.144531 C 103.445312 165.660156 103.710938 114.796875 103.789062 113.117188 L 147.398438 39.773438 C 148.484375 37.75 148.269531 35.269531 146.84375 33.457031 C 146.785156 33.382812 139.726562 26.324219 139.726562 26.324219 L 143.707031 24.550781 C 145.425781 23.78125 146.675781 22.222656 147.035156 20.375 C 147.398438 18.519531 146.835938 16.605469 145.53125 15.25 L 143.40625 13.03125 L 169.640625 24.414062 C 172.652344 25.722656 174.730469 28.566406 175.066406 31.824219 L 191.976562 194.992188 C 192.015625 195.3125 191.867188 195.53125 191.769531 195.632812 Z M 102.089844 96.285156 L 66.734375 37.429688 C 66.59375 37.167969 66.605469 36.859375 66.753906 36.613281 L 77.683594 25.695312 C 78.65625 24.726562 78.65625 23.15625 77.6875 22.183594 C 76.71875 21.210938 75.144531 21.214844 74.179688 22.179688 L 73.796875 22.566406 L 68.066406 20.011719 C 67.722656 19.863281 67.628906 19.574219 67.59375 19.417969 C 67.5625 19.257812 67.550781 18.953125 67.808594 18.683594 L 79.769531 6.210938 L 102.320312 95.367188 Z M 73.984375 204.980469 L 43.542969 204.980469 C 43.207031 204.980469 43 204.800781 42.910156 204.691406 C 42.820312 204.582031 42.671875 204.339844 42.730469 204.011719 L 43.648438 198.890625 C 43.648438 198.890625 43.648438 198.886719 43.648438 198.878906 L 56.105469 129.425781 C 56.492188 127.261719 56.5 125.058594 56.132812 122.886719 L 41.566406 37.105469 C 41.339844 35.753906 40.054688 34.847656 38.710938 35.074219 C 37.355469 35.308594 36.449219 36.585938 36.683594 37.9375 L 51.242188 123.710938 C 51.511719 125.324219 51.503906 126.953125 51.214844 128.546875 L 39.144531 195.90625 L 18.601562 195.90625 C 18.285156 195.90625 18.078125 195.730469 17.988281 195.632812 C 17.890625 195.53125 17.742188 195.3125 17.773438 194.992188 L 34.691406 31.824219 C 35.027344 28.566406 37.109375 25.722656 40.121094 24.414062 L 66.355469 13.03125 L 64.230469 15.25 C 62.921875 16.605469 62.359375 18.519531 62.722656 20.375 C 63.085938 22.222656 64.332031 23.78125 66.050781 24.550781 L 70.03125 26.324219 C 70.03125 26.324219 62.976562 33.382812 62.917969 33.457031 C 61.488281 35.269531 61.277344 37.75 62.417969 39.882812 L 100.371094 103.074219 L 99.808594 105.300781 C 98.765625 109.402344 98.714844 121.132812 98.714844 121.132812 C 98.625 137.816406 98.484375 165.75 99.089844 180.351562 C 99.246094 184.050781 100.285156 187.539062 101.984375 190.742188 C 96.273438 199.054688 84.757812 204.980469 73.984375 204.980469 Z M 104.839844 10.550781 C 111.320312 10.550781 117.785156 9.96875 124.195312 8.882812 L 121.53125 19.417969 C 110.785156 20.835938 99.101562 20.839844 88.234375 19.4375 L 85.570312 8.921875 C 91.996094 9.980469 98.425781 10.550781 104.839844 10.550781 Z M 104.878906 85.25 L 89.53125 24.589844 C 94.546875 25.160156 99.699219 25.460938 104.839844 25.460938 C 110.042969 25.460938 115.21875 25.144531 120.234375 24.5625 Z M 129.992188 6.210938 L 141.949219 18.683594 C 142.210938 18.953125 142.195312 19.257812 142.164062 19.417969 C 142.132812 19.574219 142.035156 19.863281 141.691406 20.011719 L 135.960938 22.566406 L 135.578125 22.179688 C 134.617188 21.214844 133.039062 21.210938 132.070312 22.183594 C 131.101562 23.15625 131.101562 24.726562 132.078125 25.695312 L 143.003906 36.613281 C 143.152344 36.859375 143.171875 37.164062 143.082031 37.335938 L 106.597656 98.675781 Z M 180.003906 31.320312 C 179.480469 26.269531 176.261719 21.882812 171.617188 19.863281 L 134.519531 3.761719 L 132.554688 1.71875 C 131.652344 0.570312 130.171875 0.0117188 128.710938 0.289062 C 127.171875 0.589844 125.957031 1.765625 125.621094 3.230469 L 125.523438 3.632812 C 111.917969 6.191406 98.042969 6.199219 84.246094 3.671875 L 84.148438 3.289062 C 83.800781 1.765625 82.585938 0.589844 81.046875 0.289062 C 79.59375 0.0117188 78.113281 0.570312 77.203125 1.71875 L 75.238281 3.761719 L 38.140625 19.863281 C 33.488281 21.882812 30.277344 26.269531 29.753906 31.320312 L 12.84375 194.476562 C 12.675781 196.113281 13.207031 197.742188 14.296875 198.957031 C 15.398438 200.171875 16.96875 200.871094 18.601562 200.871094 L 38.253906 200.871094 L 37.84375 203.132812 C 37.542969 204.824219 38 206.550781 39.105469 207.871094 C 40.210938 209.195312 41.824219 209.953125 43.542969 209.953125 L 73.984375 209.953125 C 85.585938 209.953125 97.972656 203.875 104.886719 195.148438 C 111.980469 204.148438 124.453125 209.953125 135.773438 209.953125 L 166.214844 209.953125 C 167.933594 209.953125 169.550781 209.195312 170.65625 207.871094 C 171.757812 206.550781 172.21875 204.824219 171.914062 203.132812 L 171.507812 200.871094 L 191.15625 200.871094 C 192.792969 200.871094 194.363281 200.171875 195.460938 198.957031 C 196.554688 197.742188 197.082031 196.113281 196.921875 194.476562 L 180.003906 31.320312 "
+                  fill-opacity="1"
+                  fill-rule="nonzero"></path></g
+              ></svg
+            >
+          </div>
+        </div>
+        <a
+          class="self-center text-white bg-black flex px-8 py-4 gap-2 rounded-xl"
+          href="https://maps.app.goo.gl/nqccH8DfVfz2MFYe8"
+          target="_blank"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-map-pin"
+            ><path
+              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+            ></path><circle cx="12" cy="10" r="3"></circle></svg
+          > Llegar a la fiesta
+        </a>
+      </div>
+    </section>
+    <section
+      class="w-full min-h-screen flex flex-col items-center gap-80 relative font-noto"
+    >
+      <img
+        class="object-cover w-full h-full absolute -z-10 inset-0 aspect-video"
+        src="Imagen-fondo2.webp"
+        alt="imagen belu & rodri2"
+      />
+      <div class="mt-10 flex flex-col gap-6 max-w-[500px] text-center">
+        <svg
+          class="text-white self-center"
+          xmlns="http://www.w3.org/2000/svg"
+          width="100"
+          height="100"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-gift"
+          ><rect x="3" y="8" width="18" height="4" rx="1"></rect><path
+            d="M12 8v13"></path><path
+            d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path><path
+            d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"
+          ></path></svg
+        >
+        <p class="text-white text-2xl">Regalos</p>
+        <p class="text-white">
+          El regalo es opcional, nos importa tu presencia, pero si deseas
+          hacernos un presente te dejamos opciones de transferencia.
+        </p>
+      </div>
+      <div
+        class="bg-white/30 rounded-xl p-10 flex flex-col gap-6 items-center backdrop-blur-sm"
+      >
+      </div>
+    </section>
+    <section
+      id="formulario"
+      class="w-full min-h-screen flex flex-col items-center gap-80 relative font-noto bg-[#91ae5e] py-10 text-white"
+    >
+      <div>
+        <div class="flex flex-col gap-5 items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100"
+            height="100"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-badge-check"
+            ><path
+              d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"
+            ></path><path d="m9 12 2 2 4-4"></path></svg
+          >
+          <p class="text-2xl">Confirmar Asistencia</p>
+          <p>
+            Por favor completá el formulario con tus datos y comentarios para
+            organizar la mejor fiesta
+          </p>
+        </div>
+        <form
+          class="flex flex-col w-full gap-4 mt-5 text-black items-center"
+          action={"/" + actions.formulario}
+          method="POST"
+        >
+          <input
+            class="py-3 px-5 w-full"
+            type="text"
+            placeholder="Nombre y apellido"
+            name="nombre_y_apellido"
+            transition:persist
+          />
+
+          <p
+            id="nombre-error"
+            class="text-red-700 text-xs self-start font-bold hidden"
+          >
+            *El campo de nombre y apellido es requerido
+          </p>
+
+          <input
+            class="py-3 px-5 w-full"
+            type="text"
+            placeholder="Email"
+            name="email"
+            transition:persist
+          />
+
+          <p id="email-error" class="text-red-700 text-xs self-start font-bold hidden">
+            *El campo de email es requerido
+          </p>
+
+          <label class="text-white self-start" for="menu"
+            >Opciones de menú</label
+          >
+          <select
+            class="text-black py-3 px-5 w-full"
+            name="menu"
+            id="menu"
+            transition:persist
+          >
+            <option selected disabled value="">Seleccionar Menú</option>
+            <option value="menu-principal">Menú Principal</option>
+            <option value="menu-vegetariano">Menú Vegetariano</option>
+            <option value="menu-vegano">Menú Vegano</option>
+            <option value="menu-celiaco">Menú Celíaco</option>
+          </select>
+
+          <p
+            id="menu-error"
+            class="text-red-700 text-xs self-start font-bold hidden"
+          >
+            *Debes seleccionar un menú
+          </p>
+
+          <textarea
+            class="text-black py-3 px-5 resize-none w-full"
+            rows="6"
+            placeholder="Comentarios y saludos"
+            name="comentarios_y_saludos"
+            transition:persist></textarea>
+          <button
+            class="bg-[#677450] text-white px-6 py-2 rounded-lg hover:bg-[#afc18f] transition-colors ease-in-out duration-200"
+            type="submit">Enviar</button
+          >
+        </form>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<script>
+  import { actions, isInputError } from "astro:actions";
+	import Swal from "sweetalert2";
+
+  const dias = document.getElementById("dias") as HTMLSpanElement;
+  const horas = document.getElementById("horas") as HTMLSpanElement;
+  const minutos = document.getElementById("minutos") as HTMLSpanElement;
+  const segundos = document.getElementById("segundos") as HTMLSpanElement;
+  const form = document.querySelector("form") as HTMLFormElement;
+  const menu_error = document.getElementById(
+    "menu-error"
+  ) as HTMLParagraphElement;
+  const nombre_error = document.getElementById(
+    "nombre-error"
+  ) as HTMLParagraphElement;
+  const email_error = document.getElementById(
+    "email-error"
+  ) as HTMLParagraphElement;
+
+  const weddingDate = new Date("2025-03-02T22:00:00Z").getTime();
+  const updateTime = () => {
+    const now = new Date().getTime();
+    const dif = weddingDate - now;
+    const days = Math.floor(dif / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((dif % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((dif % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((dif % (1000 * 60)) / 1000);
+
+    dias.innerText = days.toString().padStart(2, "0");
+    horas.innerText = hours.toString().padStart(2, "0");
+    minutos.innerText = minutes.toString().padStart(2, "0");
+    segundos.innerText = seconds.toString().padStart(2, "0");
+  };
+
+  setInterval(updateTime, 1000);
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const { error } = await actions.formulario(formData);
+    if (isInputError(error)) {
+			Swal.fire({
+				text: "Por favor, revisa los campos que faltan",
+				icon: "error",
+				toast: true,
+				timer: 3000,
+				position: "bottom-right",
+				showConfirmButton: false,
+				background: "#ffe7e7",
+				color: "red"
+				
+			});
+      if (error.fields.menu) {
+        menu_error.classList.remove("hidden");
+      }	else {
+				menu_error.classList.add("hidden");
+			}
+      if (error.fields.nombre_y_apellido) {
+        nombre_error.classList.remove("hidden");
+      } else {
+				nombre_error.classList.add("hidden");
+			}
+      if (error.fields.email) {
+        email_error.classList.remove("hidden");
+      } else {
+				email_error.classList.add("hidden");
+			}
+    } else {
+			email_error.classList.add("hidden");
+			nombre_error.classList.add("hidden");
+			menu_error.classList.add("hidden");
+			Swal.fire({
+				text: "¡Gracias por tu asistencia!",
+				icon: "success",
+				toast: true,
+				timer: 3000,
+				position: "bottom-right",
+				showConfirmButton: false,
+				background: "#e7ffe7",
+				color: "green"
+			});
+			form.reset();
+		}
+  });
+</script>
