@@ -11,12 +11,12 @@ import { actions } from "astro:actions";
     <section
       class="w-full h-dvh min:h-dvh md:min-h-screen flex flex-col justify-around items-center gap-20 md:gap-80 relative px-10"
     >
-    <div class="w-full h-full absolute -z-10 md:inset-0 aspect-video">
-      <img
-      class="object-cover h-full w-full md:object-center object-[-900px]"
-      src="Imagen-fondo.webp"
-      alt="imagen belu & rodri2"
-    />
+    <div class="w-full h-full absolute -z-10 inset-0">
+      <picture>
+        <source srcset="Imagen-fondo.webp" type="image/webp" media="(min-width: 769px)">
+        <source srcset="Imagen-fondo-mobile.png" type="image/png" media="(max-width: 768px)">
+        <img src="Imagen-fondo.webp" alt="imagen belu & rodri2" class="object-cover h-full w-full md:object-center">
+      </picture>
     </div>
      
       <h1
