@@ -8,10 +8,10 @@ import { actions } from "astro:actions";
 <Layout>
   <main transition:persist class="font-cinzel">
     <section
-      class="w-full h-dvh min:h-dvh md:min-h-screen flex flex-col gap-10 justify-end items-center relative px-10 py-10"
+      class="w-full h-dvh min:h-dvh md:min-h-screen flex flex-col gap-14 justify-end items-center relative px-10 py-10"
     >
       <div
-        class="w-full h-full absolute -z-10 inset-0 bg-gradient-to-b from-black via-white via-90% to-white"
+        id="fondo-img" class="w-full h-full absolute -z-10 inset-0 "
       >
         <picture class="opacity-40">
           <source
@@ -368,3 +368,8 @@ import { actions } from "astro:actions";
     }
   });
 </script>
+<style>
+  #fondo-img {
+    background-image: linear-gradient(to bottom, #000000 15%, #ffffff 70%);
+  }
+</style>
