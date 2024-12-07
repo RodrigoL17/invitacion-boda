@@ -6,7 +6,12 @@ export default {
 			fontFamily: {
 				lora: ['Lora Variable', 'sans-serif'],
 				noto: ['Noto Sans Variable', 'sans-serif'],
-				dancing: ['Dancing Script Variable', 'cursive']
+				dancing: ['Dancing Script Variable', 'cursive'],
+				cinzel: ['Cinzel Variable', 'serif'],
+				marcellus: ['Marcellus', 'serif'],
+				fleur: ['Fleur De Leah', 'cursive'],
+				windsong: ['Windsong', 'cursive'],
+				great: ['Great Vibes', 'cursive']
 			}
 		},
 	},

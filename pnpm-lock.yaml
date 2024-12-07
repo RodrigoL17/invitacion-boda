@@ -17,6 +17,9 @@ importers:
       '@astrojs/vercel':
         specifier: ^8.0.0
         version: 8.0.0(astro@5.0.1(@types/node@22.10.1)(jiti@1.21.6)(rollup@4.28.0)(typescript@5.7.2)(yaml@2.6.1))(react@18.3.1)(rollup@4.28.0)
+      '@fontsource-variable/cinzel':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@fontsource-variable/dancing-script':
         specifier: ^5.1.0
         version: 5.1.0
@@ -26,7 +29,19 @@ importers:
       '@fontsource-variable/noto-sans':
         specifier: ^5.1.0
         version: 5.1.0
+      '@fontsource/fleur-de-leah':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource/great-vibes':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource/marcellus':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@fontsource/merriweather':
+        specifier: ^5.1.0
+        version: 5.1.0
+      '@fontsource/windsong':
         specifier: ^5.1.0
         version: 5.1.0
       '@neondatabase/serverless':
@@ -433,6 +448,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource-variable/cinzel@5.1.0':
+    resolution: {integrity: sha512-HxDnJnEsQrUk0nbnd7O8FTpnErfJDxQjEA0AugHApylhHKtLf6zI2GdddXYaI0NnmZV95BS244RkJwayw4eBwQ==}
+
   '@fontsource-variable/dancing-script@5.1.0':
     resolution: {integrity: sha512-SgVT0jPYUn77oqTabyVQesH5eL6FeHUmIDCLPCMrsOb7pbyTrH2PT7g4VElz9J5DAe3qH6NhovxfcSJjVoFluA==}
 
@@ -442,8 +460,20 @@ packages:
   '@fontsource-variable/noto-sans@5.1.0':
     resolution: {integrity: sha512-mLn33cgmryVFjpHoHy/lx6/DsRvp8kbxDmfMbMNl75eY+bVubad3u6oGSCyc8izcSNZAhAlXdoFW7mCnI2l63w==}
 
+  '@fontsource/fleur-de-leah@5.1.0':
+    resolution: {integrity: sha512-rzyCj7fO7rzUUpSTpr1M2EOSaaZ7JajN26lR2sZ3vFdOM1Dqhoa3GsO6Wh1zJiqUXCDOlPeAhGnZgLjrWvQPXg==}
+
+  '@fontsource/great-vibes@5.1.0':
+    resolution: {integrity: sha512-JpWy7DAFC9IqwGLBccyNVgIAEznz1siqo5GLd/l4ZRace7vZAhdvugTISB5DoyBPPR9Kn/Ggd8vMQMJrfpEOMQ==}
+
+  '@fontsource/marcellus@5.1.0':
+    resolution: {integrity: sha512-ekdD/RVn86D1OU4++H8AJxtGUMwegnosF/+srHAsQbVpqTft/ShrKNr+x5PpAvtonc0LidT4th4tflmkloVr1A==}
+
   '@fontsource/merriweather@5.1.0':
     resolution: {integrity: sha512-CliXFoCACKkrx8G93xGw6cD7RYCOytuY/Afe1W/htsRRlaSyGA6HGNQzQJc6NKzjs9XenBH2CcMQsONyppd+uQ==}
+
+  '@fontsource/windsong@5.1.0':
+    resolution: {integrity: sha512-hF9GsB2sCo67lx3krHqX/CKKwfdZlJUm0HTaWryLuVGIxwCkklZk5v6SLFz2T1cyZgQIw73UzBp7WE/O7kjySA==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2727,13 +2757,23 @@ snapshots:
   '@esbuild/win32-x64@0.24.0':
     optional: true
 
+  '@fontsource-variable/cinzel@5.1.0': {}
+
   '@fontsource-variable/dancing-script@5.1.0': {}
 
   '@fontsource-variable/lora@5.1.0': {}
 
   '@fontsource-variable/noto-sans@5.1.0': {}
 
+  '@fontsource/fleur-de-leah@5.1.0': {}
+
+  '@fontsource/great-vibes@5.1.0': {}
+
+  '@fontsource/marcellus@5.1.0': {}
+
   '@fontsource/merriweather@5.1.0': {}
+
+  '@fontsource/windsong@5.1.0': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

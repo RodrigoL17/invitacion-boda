@@ -3,29 +3,40 @@ import Traje from "../components/traje.astro";
 import Vesitdo from "../components/vesitdo.astro";
 import Layout from "../layouts/Layout.astro";
 import { actions } from "astro:actions";
-
 ---
 
 <Layout>
-  <main transition:persist>
+  <main transition:persist class="font-cinzel">
     <section
-      class="w-full h-dvh min:h-dvh md:min-h-screen flex flex-col justify-around items-center gap-20 md:gap-80 relative px-10"
+      class="w-full h-dvh min:h-dvh md:min-h-screen flex flex-col gap-10 justify-end items-center relative px-10 py-10"
     >
-    <div class="w-full h-full absolute -z-10 inset-0">
-      <picture>
-        <source srcset="Imagen-fondo.webp" type="image/webp" media="(min-width: 769px)">
-        <source srcset="Imagen-fondo-mobile.webp" type="image/webp" media="(max-width: 768px)">
-        <img src="Imagen-fondo.webp" alt="imagen belu & rodri2" class="object-cover h-full w-full md:object-center">
-      </picture>
-    </div>
-     
-      <h1
-        class="text-[#ffcb6a] text-center font-bold font-dancing text-6xl italic"
+      <div
+        class="w-full h-full absolute -z-10 inset-0 bg-gradient-to-b from-black via-white via-90% to-white"
       >
+        <picture class="opacity-40">
+          <source
+            srcset="Imagen-fondo.webp"
+            type="image/webp"
+            media="(min-width: 769px)"
+          />
+          <source
+            srcset="Imagen-fondo-mobile.webp"
+            type="image/webp"
+            media="(max-width: 768px)"
+          />
+          <img
+            src="Imagen-fondo.webp"
+            alt="imagen belu & rodri2"
+            class="object-cover h-full w-full md:object-center"
+          />
+        </picture>
+      </div>
+
+      <h1 class="text-white text-center font-great tracking-wider text-6xl italic">
         Belu & Rodri
       </h1>
       <div
-        class="flex flex-col items-center justify-center gap-2 text-[#464861] font-noto text-xl px-10 py-4 rounded-lg font-bold backdrop-blur-sm bg-[#c4e9ff]/30"
+        class="flex flex-col items-center justify-center gap-2 text-white text-xl px-10 py-4 rounded-lg font-bold backdrop-blur-sm bg-[#c4e9ff]/30"
       >
         <p class="text-2xl">Nos casamos en</p>
         <div class="flex gap-4 items-center justify-evenly">
@@ -51,66 +62,44 @@ import { actions } from "astro:actions";
           </div>
         </div>
         <a
-          class="uppercase bg-white text-[#ffcb6a] px-6 py-3 rounded-xl font-bold font-noto mt-6"
+          class="uppercase bg-[#6a8477] text-white px-6 py-3 rounded-xl font-bold mt-6"
           href="#info">Más Info</a
         >
       </div>
     </section>
     <section
       id="info"
-      class="min-h-screen flex flex-col py-10 items-center font-noto px-10"
+      class="min-h-screen flex flex-col py-10 items-center px-10"
     >
-      <div
-        class="text-white bg-black flex justify-center items-center p-6 rounded-full"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="100"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-party-popper"
-          ><path d="M5.8 11.3 2 22l10.7-3.79"></path><path d="M4 3h.01"
-          ></path><path d="M22 8h.01"></path><path d="M15 2h.01"></path><path
-            d="M22 20h.01"></path><path
-            d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"
-          ></path><path
-            d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"
-          ></path><path
-            d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"
-          ></path><path
-            d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"
-          ></path></svg
-        >
-      </div>
-      <p class="text-4xl my-10">La Fiesta</p>
       <img
-        class="aspect-[800x533] w-[500px] rounded-lg"
+        class="self-center w-[250px] mb-10"
+        src="3.png"
+        alt="linea-corazon"
+      />
+      <img
+        class="aspect-square w-[100px]"
+        src="copas.png"
+        alt="imagen de copas"
+      />
+      <p class="text-4xl mb-10 font-bold text-[#6a8477]">La Fiesta</p>
+      <img
+        class="aspect-[800x533] w-[400px] self-center rounded-lg"
         src="janos.jpg"
         alt="janos olivos"
         loading="lazy"
       />
       <div class="mt-10 flex flex-col gap-6 max-w-[350px] text-center">
-        <p><span class="font-black">Fecha</span>: Domingo 2 de Marzo</p>
-        <p><span class="font-black">Hora</span>: 19:00 hs</p>
         <p>
-          <span class="font-black">Salón</span>: Janos Olivos I, Mariano Pelliza
-          310, Olivos, Provincia de Buenos Aires.
+          <span class="font-black text-[#6a8477]">Fecha</span>: Domingo 2 de
+          Marzo
         </p>
-        <div class="flex flex-col gap-2 items-center">
-          <p class="text-center mt-10 text-xl">DRESS CODE</p>
-          <p class="text-center">Elegante</p>
-          <div class="flex">
-            <Traje/>
-            <Vesitdo/>
-          </div>
-        </div>
+        <p><span class="font-black text-[#6a8477]">Hora</span>: 19:00 hs</p>
+        <p>
+          <span class="font-black text-[#6a8477]">Salón</span>: Janos Olivos I,
+          Mariano Pelliza 310, Olivos, Provincia de Buenos Aires.
+        </p>
         <a
-          class="self-center text-white bg-black flex px-8 py-4 gap-2 rounded-xl"
+          class="self-center text-white bg-[#6a8477] flex px-8 py-4 gap-2 rounded-xl"
           href="https://maps.app.goo.gl/nqccH8DfVfz2MFYe8"
           target="_blank"
         >
@@ -130,50 +119,73 @@ import { actions } from "astro:actions";
             ></path><circle cx="12" cy="10" r="3"></circle></svg
           > Llegar a la fiesta
         </a>
+        <img
+          class="self-center w-[250px] mt-10"
+          src="3.png"
+          alt="linea-corazon"
+        />
+
+        <div class="flex flex-col gap-4 items-center">
+          <p class="text-center mt-10 text-2xl text-[#6a8477] font-bold">
+            DRESS CODE
+          </p>
+          <p class="text-center">Elegante</p>
+          <div class="flex">
+            <Traje />
+            <Vesitdo />
+          </div>
+          <img class="w-[250px] mt-10" src="3.png" alt="linea-corazon" />
+          <div class="flex flex-col items-center">
+            <p class="mt-10 uppercase">No es una fiesta si no suena...</p>
+            <p class="font-semibold text-2xl mb-4 text-[#6a8477]">¿Que tema?</p>
+            <a
+              class="self-center text-white bg-[#6a8477] flex px-8 py-4 gap-2 rounded-xl"
+              href="https://open.spotify.com/playlist/5aeJSrKXf7iQSuBdGD97Dk?si=e07259073f3949c4&pt=00d0bb0699adf3745db6c80229eb60bb"
+              target="_blank">Ingresa aqui y danos una mano</a
+            >
+          </div>
+          <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/5aeJSrKXf7iQSuBdGD97Dk?utm_source=generator&theme=0"
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
       </div>
     </section>
     <section
-      class="w-full min-h-screen flex flex-col items-center gap-80 relative font-noto px-10" 
+      class="w-full flex flex-col items-center relative px-10 py-10 text-[#6a8477]"
     >
-      <img
-        class="object-cover w-full h-full absolute -z-10 inset-0 aspect-video"
-        src="Imagen-fondo2.webp"
-        alt="imagen belu & rodri2"
-      />
+      <img class="self-center w-[250px]" src="3.png" alt="linea-corazon" />
       <div class="mt-10 flex flex-col gap-6 max-w-[500px] text-center">
-        <svg
-          class="text-white self-center"
-          xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="100"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-gift"
-          ><rect x="3" y="8" width="18" height="4" rx="1"></rect><path
-            d="M12 8v13"></path><path
-            d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path><path
-            d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"
-          ></path></svg
-        >
-        <div class="flex flex-col gap-6 items-center backdrop-blur-sm bg-white/10 p-6 rounded-xl">
-          <p class="text-white text-2xl">Regalos</p>
-          <p class="text-white text-xl">¡Queridos amigos y familia!</p>
-          <p class="text-white">
-            El mejor regalo que podríamos recibir es tenerlos con nosotros para celebrar este día tan especial. Si sienten el deseo de compartir algo más, encontrarán un buzón en la fiesta donde podrán dejarnos un detalle especial que nos acompañará en nuestra próxima aventura. 
+        <img
+          class="aspect-square self-center w-[100px]"
+          src="auto.png"
+          alt="imagen de auto"
+        />
+        <div class="flex flex-col gap-6 items-center p-6 rounded-xl">
+          <p class="text-xl">¡Queridos amigos y familia!</p>
+          <p>
+            El mejor regalo que podríamos recibir es tenerlos con nosotros para
+            celebrar este día tan especial. Si sienten el deseo de compartir
+            algo más, encontrarán un buzón en la fiesta donde podrán dejarnos un
+            detalle especial que nos acompañará en nuestra próxima aventura.
           </p>
-          <p class="text-white">❤️¡Nuestra luna de miel!🌙.</p>
-          <p class="text-white">¡Gracias por ser parte de este momento tan importante en nuestras vidas!</p>
-        </div>  
-       
+          <p>¡Nuestra luna de miel!.</p>
+          <p>
+            ¡Gracias por ser parte de este momento tan importante en nuestras
+            vidas!
+          </p>
+        </div>
       </div>
     </section>
+    <img class="" src="Imagen-fondo2.webp" alt="" />
     <section
       id="formulario"
-      class="w-full min-h-screen flex flex-col items-center gap-80 relative font-noto bg-[#91ae5e] py-10 text-white px-10"
+      class="w-full min-h-screen flex flex-col items-center gap-80 relative bg-[#6a8477] py-10 text-white px-10"
     >
       <div>
         <div class="flex flex-col gap-5 items-center">
@@ -226,7 +238,10 @@ import { actions } from "astro:actions";
             transition:persist
           />
 
-          <p id="email-error" class="text-red-700 text-xs self-start font-bold hidden">
+          <p
+            id="email-error"
+            class="text-red-700 text-xs self-start font-bold hidden"
+          >
             *El campo de email es requerido
           </p>
 
@@ -260,7 +275,7 @@ import { actions } from "astro:actions";
             name="comentarios_y_saludos"
             transition:persist></textarea>
           <button
-            class="bg-[#677450] text-white px-6 py-2 rounded-lg hover:bg-[#afc18f] transition-colors ease-in-out duration-200"
+            class="bg-white text-[#6a8477] px-6 py-2 rounded-lg hover:bg-[#33423a] hover:text-white transition-colors ease-in-out duration-200"
             type="submit">Enviar</button
           >
         </form>
@@ -271,7 +286,7 @@ import { actions } from "astro:actions";
 
 <script>
   import { actions, isInputError } from "astro:actions";
-	import Swal from "sweetalert2";
+  import Swal from "sweetalert2";
 
   const dias = document.getElementById("dias") as HTMLSpanElement;
   const horas = document.getElementById("horas") as HTMLSpanElement;
@@ -310,47 +325,46 @@ import { actions } from "astro:actions";
     const formData = new FormData(form);
     const { error } = await actions.formulario(formData);
     if (isInputError(error)) {
-			Swal.fire({
-				text: "Por favor, revisa los campos que faltan",
-				icon: "error",
-				toast: true,
-				timer: 3000,
-				position: "bottom-right",
-				showConfirmButton: false,
-				background: "#ffe7e7",
-				color: "red"
-				
-			});
+      Swal.fire({
+        text: "Por favor, revisa los campos que faltan",
+        icon: "error",
+        toast: true,
+        timer: 3000,
+        position: "bottom-right",
+        showConfirmButton: false,
+        background: "#ffe7e7",
+        color: "red",
+      });
       if (error.fields.menu) {
         menu_error.classList.remove("hidden");
-      }	else {
-				menu_error.classList.add("hidden");
-			}
+      } else {
+        menu_error.classList.add("hidden");
+      }
       if (error.fields.nombre_y_apellido) {
         nombre_error.classList.remove("hidden");
       } else {
-				nombre_error.classList.add("hidden");
-			}
+        nombre_error.classList.add("hidden");
+      }
       if (error.fields.email) {
         email_error.classList.remove("hidden");
       } else {
-				email_error.classList.add("hidden");
-			}
+        email_error.classList.add("hidden");
+      }
     } else {
-			email_error.classList.add("hidden");
-			nombre_error.classList.add("hidden");
-			menu_error.classList.add("hidden");
-			Swal.fire({
-				text: "¡Gracias por tu asistencia!",
-				icon: "success",
-				toast: true,
-				timer: 3000,
-				position: "bottom-right",
-				showConfirmButton: false,
-				background: "#e7ffe7",
-				color: "green"
-			});
-			form.reset();
-		}
+      email_error.classList.add("hidden");
+      nombre_error.classList.add("hidden");
+      menu_error.classList.add("hidden");
+      Swal.fire({
+        text: "¡Gracias por tu asistencia!",
+        icon: "success",
+        toast: true,
+        timer: 3000,
+        position: "bottom-right",
+        showConfirmButton: false,
+        background: "#e7ffe7",
+        color: "green",
+      });
+      form.reset();
+    }
   });
 </script>
