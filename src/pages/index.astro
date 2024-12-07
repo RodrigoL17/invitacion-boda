@@ -10,10 +10,9 @@ import { actions } from "astro:actions";
     <section
       class="w-full h-dvh min:h-dvh md:min-h-screen flex flex-col gap-14 justify-end items-center relative px-10 py-10"
     >
-      <div
-        id="fondo-img" class="w-full h-full absolute -z-10 inset-0 "
+      <div class="w-full h-full absolute -z-10 inset-0 "
       >
-        <picture class="opacity-40">
+        <picture>
           <source
             srcset="Imagen-fondo.webp"
             type="image/webp"
@@ -368,9 +367,4 @@ import { actions } from "astro:actions";
     }
   });
 </script>
-<style>
-  #fondo-img {
-    background: -webkit-linear-gradient(to bottom, #000000 15%, #ffffff 70%);
-    background: linear-gradient(to bottom, #000000 15%, #ffffff 70%);
-  }
-</style>
+
