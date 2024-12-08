@@ -10,8 +10,7 @@ import { actions } from "astro:actions";
     <section
       class="w-full h-dvh min:h-dvh md:min-h-screen flex flex-col gap-14 justify-end items-center relative px-10 py-10"
     >
-      <div class="w-full h-full absolute -z-10 inset-0 "
-      >
+      <div class="w-full h-full absolute -z-10 inset-0">
         <picture>
           <source
             srcset="Imagen-fondo.webp"
@@ -31,7 +30,9 @@ import { actions } from "astro:actions";
         </picture>
       </div>
 
-      <h1 class="text-white text-center font-great tracking-wider text-6xl italic">
+      <h1
+        class="text-white text-center font-great tracking-wider text-6xl italic"
+      >
         Belu & Rodri
       </h1>
       <div
@@ -129,9 +130,12 @@ import { actions } from "astro:actions";
             DRESS CODE
           </p>
           <p class="text-center">Elegante</p>
-          <div class="flex">
-            <Traje />
-            <Vesitdo />
+          <div class="flex flex-col items-center">
+            <div class="flex">
+              <Traje />
+              <Vesitdo />
+            </div>
+            <small class="mt-4 text-gray-500 text-xs">(No está permitido asistir con vestido blanco/natural, ni tampoco vestido de lentejuelas/glitter. Gracias)</small>
           </div>
           <img class="w-[250px] mt-10" src="3.png" alt="linea-corazon" />
           <div class="flex flex-col items-center">
@@ -367,4 +371,3 @@ import { actions } from "astro:actions";
     }
   });
 </script>
-
